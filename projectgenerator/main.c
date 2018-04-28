@@ -10,7 +10,7 @@ void menue(void);
 
 int standartmode(char *projectname);
 void write_standart_main(char *projectname, FILE *main_file);
-
+void write_standart_makefile(char *projectname, FILE *main_file);
 
 void extendetmode(char *projectname);
 void konfigfilemode(char *projectname);
@@ -77,6 +77,7 @@ int standartmode(char *projectname){
 		}
 		else{
 			write_standart_main(projectname, main_file);
+			write_standart_makefile(projectname, makefile);
 			status = TRUE;
 		}
 	}
@@ -91,4 +92,23 @@ void write_standart_main(char *projectname, FILE *main_file){
 	fputs("\n\n", main_file);
 	fputs(standart_main, main_file);
 	return;
+}
+
+void write_standart_makefile(char *projectname, FILE *make_file){
+	fputs(standart_make_commands, make_file);
+	fputs(projectname, make_file);
+	fputs("\n", make_file);
+	fputs(standart_make_all, make_file);
+	fputs("\n", make_file);
+	fputs("compile: ", make_file);
+	fputs(projectname, make_file);
+	fputs(standart_make_compile1, make_file);
+	fputs(".o\n", make_file);
+	fputs("\n", make_file);
+	fputs(projectname, make_file);
+	fputs(".o: ", make_file);
+	fputs(projectname, make_file);
+	fputs(standart_make_compile2, make_file);
+	fputs(projectname, make_file);
+	fputs(standart_make_clean, make_file);
 }
