@@ -1,14 +1,18 @@
 CC = gcc
 CFLAGS = -Wall -pedantic -std=c99 -c
 OUTNAME = projectgen
+OBJ = main.o standard_mode.o
 
 all: compile clean
 
-compile: main.o
-	$(CC) -o $(OUTNAME) main.o
+compile: $(OBJ)
+	$(CC) -o $(OUTNAME) $(OBJ)
 
-main.o: main.c
+main.o: main.c standard_mode.h
 	$(CC) $(CFLAGS) main.c
+
+standard_mode.o: standard_mode.c standard_mode.h var_defines.h
+	$(CC) $(CFLAGS) standard_mode.c
 
 clean: 
 	rm -f *.o
