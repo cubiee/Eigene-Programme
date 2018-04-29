@@ -50,9 +50,7 @@ int standard_mode(char *projectname){
 }
 
 void write_standart_main(char *projectname, FILE *main_file){
-	fputs("/*", main_file);
-	fputs(projectname, main_file);
-	fputs(standart_kopfzeile, main_file);
+	fprintf(main_file, standart_kopfzeile, projectname, __DATE__);
 	write_header(standard_header, main_file);
 	fputs("\n\n", main_file);
 	fputs(standart_main, main_file);
@@ -60,10 +58,14 @@ void write_standart_main(char *projectname, FILE *main_file){
 }
 
 void write_standart_makefile(char *projectname, FILE *make_file){
-	fputs(standart_make_commands, make_file);
-	fputs(projectname, make_file);
+	MAKECOMMANDS standart_commands;
+	strcpy(standart_commands.compiler, compiler);
+	strcpy(standart_commands.compilerflags, commands);
+	strcpy(standart_commands.outname, projectname);
+	
+	write_make_vars(standart_commands, make_file);
 	fputs("\n", make_file);
-	fputs("\n", make_file);
+	
 	fputs(standart_make_all, make_file);
 	fputs("\n", make_file);
 	fputs("compile: ", make_file);
@@ -72,10 +74,9 @@ void write_standart_makefile(char *projectname, FILE *make_file){
 	fputs(projectname, make_file);
 	fputs(".o\n", make_file);
 	fputs("\n", make_file);
-	fputs(projectname, make_file);
-	fputs(".o: ", make_file);
-	fputs(projectname, make_file);
-	fputs(standart_make_compile2, make_file);
-	fputs(projectname, make_file);
+
+	write_make_object_command(projectname, make_file);
+	fputs("\n", make_file);
+
 	fputs(standart_make_clean, make_file);
 }

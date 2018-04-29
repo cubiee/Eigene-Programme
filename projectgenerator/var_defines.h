@@ -1,10 +1,11 @@
 #ifndef VARDEFINES_H
 #define VARDEFINES_H
 
+//MAIN FILE
 char standart_kopfzeile[] = {
-	".c\n"
+	"/*%s.c\n"
 	"<PROGRAMMBESCHREIBUNG>\n"
-	"Datum: <DATUM>\n"
+	"Datum: %s\n"
 	"Autor: <NAME> <VORNAME>\n"
 	"Mat.Nr.: <MATRIKELNUMMER>\n"
 	"*/\n"
@@ -13,7 +14,6 @@ char standart_kopfzeile[] = {
 char *standard_header[] = {
 	"stdio.h",
 	"stdlib.h",
-	"string.h",
 	"END"
 };
 
@@ -21,16 +21,15 @@ char standart_main[] = {
 	"int main(void){\n"
 	"\n"
 	"\t/*PROGRAMMCODE*/\n"
-	"\n"
+	"\t\n"
 	"\treturn 0;\n"
 	"}\n"
 };
 
-char standart_make_commands[] = {
-	"CC = gcc\n"
-	"CFLAGS = -Wall -pedantic -std=c99 -c\n"
-	"OUTNAME = "
-};
+
+//MAKE FILE
+char *compiler = "gcc";
+char *commands = "-Wall -pedantic -std=c99 -c";
 
 char standart_make_all[] = {
 	"all: compile clean\n"
@@ -47,8 +46,6 @@ char standart_make_compile2[] = {
 };
 
 char standart_make_clean[] = {
-	".c\n"
-	"\n"
 	"clean:\n"
 	"\trm -f *.o\n"
 };
