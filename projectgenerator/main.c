@@ -3,7 +3,6 @@
 #include <string.h>
 #include "standard_mode.h"
 
-
 void menue(void);
 
 int main(int argc, char *argv[]){
@@ -36,4 +35,3 @@ void menue(void){
 	printf("\t-s : Standartmodus\n\t-e : Erweiterter modus\n\t-f : Konigurations Datei modus\n");
 	return;
 }
-

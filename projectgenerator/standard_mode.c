@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "projectgen_std_func.h"
 #include "standard_mode.h"
 #include "var_defines.h"
+
+#define TRUE 1
+#define FALSE 0
 
 void write_standart_main(char *projectname, FILE *main_file);
 void write_standart_makefile(char *projectname, FILE *make_file);
@@ -48,7 +53,7 @@ void write_standart_main(char *projectname, FILE *main_file){
 	fputs("/*", main_file);
 	fputs(projectname, main_file);
 	fputs(standart_kopfzeile, main_file);
-	fputs(standart_header, main_file);
+	write_header(standard_header, main_file);
 	fputs("\n\n", main_file);
 	fputs(standart_main, main_file);
 	return;

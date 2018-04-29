@@ -1,3 +1,6 @@
+#ifndef VARDEFINES_H
+#define VARDEFINES_H
+
 char standart_kopfzeile[] = {
 	".c\n"
 	"<PROGRAMMBESCHREIBUNG>\n"
@@ -7,10 +10,11 @@ char standart_kopfzeile[] = {
 	"*/\n"
 };
 
-char standart_header[] = {
-	"#include <stdio.h>\n"
-	"#include <stdlib.h>\n"
-	"#include <string.h>\n"
+char *standard_header[] = {
+	"stdio.h",
+	"stdlib.h",
+	"string.h",
+	"END"
 };
 
 char standart_main[] = {
@@ -48,3 +52,4 @@ char standart_make_clean[] = {
 	"clean:\n"
 	"\trm -f *.o\n"
 };
+#endif
