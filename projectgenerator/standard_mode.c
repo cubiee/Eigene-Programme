@@ -4,7 +4,10 @@
 #include "standard_mode.h"
 #include "var_defines.h"
 
-int standartmode(char *projectname){
+void write_standart_main(char *projectname, FILE *main_file);
+void write_standart_makefile(char *projectname, FILE *make_file);
+
+int standard_mode(char *projectname){
 	FILE *main_file;
 	FILE *makefile;
 
@@ -55,11 +58,13 @@ void write_standart_makefile(char *projectname, FILE *make_file){
 	fputs(standart_make_commands, make_file);
 	fputs(projectname, make_file);
 	fputs("\n", make_file);
+	fputs("\n", make_file);
 	fputs(standart_make_all, make_file);
 	fputs("\n", make_file);
 	fputs("compile: ", make_file);
 	fputs(projectname, make_file);
 	fputs(standart_make_compile1, make_file);
+	fputs(projectname, make_file);
 	fputs(".o\n", make_file);
 	fputs("\n", make_file);
 	fputs(projectname, make_file);

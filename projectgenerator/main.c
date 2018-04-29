@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
 	else
 	{
 		if (strcmp(argv[2], "-s") == 0){
-			standartmode(argv[1]);
+			standard_mode(argv[1]);
 		}
 		else if (strcmp(argv[2], "-e") == 0){
 			//extendetmode(argv[1]);

@@ -4,8 +4,6 @@
 #define TRUE 1
 #define FALSE 0
 
-int standartmode(char *projectname);
-void write_standart_main(char *projectname, FILE *main_file);
-void write_standart_makefile(char *projectname, FILE *make_file);
+int standard_mode(char *projectname);
 
 #endif

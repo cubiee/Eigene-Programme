@@ -18,7 +18,7 @@ char standart_main[] = {
 	"\n"
 	"\t/*PROGRAMMCODE*/\n"
 	"\n"
-	"\treturn 0\n"
+	"\treturn 0;\n"
 	"}\n"
 };
 
@@ -46,5 +46,5 @@ char standart_make_clean[] = {
 	".c\n"
 	"\n"
 	"clean:\n"
-	"\trm - f *.o\n"
+	"\trm -f *.o\n"
 };
