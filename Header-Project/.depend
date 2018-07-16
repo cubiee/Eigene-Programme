@@ -1,5 +1,0 @@
-check-type.o: check-type.c Stringfunc.h
-inputfunc.o: inputfunc.c inputfunc.h Stringfunc.h
-main.o: main.c myheader.h Stringfunc.h Elektrotechnik.h inputfunc.h
-stern-dreieck.o: stern-dreieck.c Elektrotechnik.h
-string-case.o: string-case.c Stringfunc.h
