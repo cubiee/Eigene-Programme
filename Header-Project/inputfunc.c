@@ -1,8 +1,8 @@
-#include "inputfunc.h"
-#include "Stringfunc.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "inputfunc.h"
+#include "Stringfunc.h"
 
 int get_usr_int(char *prompt, int min, int max, int *nmbr){
 	int status = 1;

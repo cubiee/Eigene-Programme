@@ -1,6 +1,7 @@
 PROGRAM = headerproj
-OBJECTS = main.o stern-dreieck.o check-type.o string-case.o inputfunc.o
+OBJECTS = main.o 
 #--------- ab hier nicht mehr ändern
+HEADERPROJECT = stern-dreieck.o check-type.o string-case.o inputfunc.o
 DEPENDFILE = .depend
 CC=gcc
 CFLAGS=-Wall -pedantic 
@@ -8,8 +9,8 @@ CFLAGS=-Wall -pedantic
 .PHONY: all
 all: dep $(PROGRAM)
 
-$(PROGRAM) : $(OBJECTS)
-	$(CC) $(OBJECTS) -o $(PROGRAM)
+$(PROGRAM) : $(OBJECTS) $(HEADERPROJECT)
+	$(CC) $(OBJECTS) $(HEADERPROJECT) -o $(PROGRAM)
 
 %.o : %.c
 	$(CC) -c $(CFLAGS) $< -o $@
