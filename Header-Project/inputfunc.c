@@ -12,7 +12,7 @@ int get_usr_int(char *prompt, int min, int max, int *nmbr){
 	printf(prompt);
 
 	if (max < min){
-		int temp = max;
+		temp = max;
 		max = min;
 		min = temp;
 	}
@@ -66,6 +66,39 @@ int get_usr_float(char *prompt, float min, float max, float *nmbr){
 			}
 			else{
 				*nmbr = temp;
+			}
+		}
+	}
+	return status;
+}
+
+int get_usr_string(char *prompt, char *buffer, int buffer_size){
+	int status = 1;
+	int i = 0, j = 0;
+	char INPUTBUFFER[INPUTBUFFER_SIZE] = { '\0' };
+
+	printf(prompt);
+
+	if (NULL == fgets(INPUTBUFFER, INPUTBUFFER_SIZE, stdin)){
+		status = 0;
+	}
+	else{
+		INPUTBUFFER[strlen(INPUTBUFFER) - 1] = '\0';
+		if (0 >= strlen(INPUTBUFFER)){
+			status = 0;
+		}
+		else{
+			for (i = 0; i < strlen(INPUTBUFFER); i++){
+				if (INPUTBUFFER[i] != ' '){
+					j++;
+				}
+			}
+			if (0 == j){
+				status = 0;
+			}
+			else{
+				strncpy(buffer, INPUTBUFFER, buffer_size);
+				buffer[buffer_size - 1] = '\0';
 			}
 		}
 	}
