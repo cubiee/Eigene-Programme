@@ -8,16 +8,12 @@ void __stern_dreieck(float R_a, float R_b, float R_c);
 void __dreieck_stern(float R_ab, float R_bc, float R_ac);
 void __stern_dreieck_menue(void);
 
-void stern_dreieck_umwandlung(void){
-	int mode = STERN_DREIECK;
-	float resistor[3] = { 1, 1, 1 };
-	//userinput -> mode/resitor
-
+void stern_dreieck_umwandlung(int mode, float R_1, float R_2, float R_3){
 	if (mode == STERN_DREIECK){
-		__stern_dreieck(resistor[0], resistor[1], resistor[2]);
+		__stern_dreieck(R_1, R_2, R_3);
 	}
 	else if (mode == DREIECK_STERN){
-		__dreieck_stern(resistor[0], resistor[1], resistor[2]);
+		__dreieck_stern(R_1, R_2, R_3);
 	}
 	else{
 		__stern_dreieck_menue();

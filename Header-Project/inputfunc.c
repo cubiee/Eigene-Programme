@@ -83,7 +83,9 @@ int get_usr_string(char *prompt, char *buffer, int buffer_size){
 		status = 0;
 	}
 	else{
-		INPUTBUFFER[strlen(INPUTBUFFER) - 1] = '\0';
+		if (INPUTBUFFER[strlen(INPUTBUFFER) - 1] == '\n'){
+			INPUTBUFFER[strlen(INPUTBUFFER) - 1] = '\0';
+		}
 		if (0 >= strlen(INPUTBUFFER)){
 			status = 0;
 		}
