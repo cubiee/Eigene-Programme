@@ -38,7 +38,7 @@ int cLoggingLog(int filenmbr, int Mode, char *message);
 ```c
 void cLoggingSetCustomLogMsg(int CustomMsgNmbr, char *message);
 ```
-## CustomMsgNmbr:  
+### CustomMsgNmbr:  
 - CUSTOM_LOG_MSG_0 - CUSTOM_LOG_MSG_9 : Speicherort des Custom Bezeichners  
 ## Modul Zurücksetzten:  
 ```c
