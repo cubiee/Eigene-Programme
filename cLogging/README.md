@@ -1,5 +1,5 @@
 # cLogging
-Projekt zum schreiben von Logfiles wurde in zuge meiner klausurvobereitung Geschrieben und ist an das Logging Modul von Python angelegt jedoch ist ausser der Idee kaum noch eine Gemeinsamkeit zu finden.   
+Projekt zum schreiben von Logfiles wurde in zuge meiner Klausurvobereitung geschrieben und ist an das Logging Modul von Python angelegt jedoch ist ausser der Idee kaum noch eine Gemeinsamkeit zu finden.   
 <br/>
 ## Öffnen eines Logfiles:  
 ```c
